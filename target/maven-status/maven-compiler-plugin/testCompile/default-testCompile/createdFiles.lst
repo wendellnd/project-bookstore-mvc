@@ -1,0 +1,9 @@
+com/fiap/project_bookstore_mvc/repositories/AuthorRepositoryTest.class
+com/fiap/project_bookstore_mvc/integration/AuthorIntegrationTest.class
+com/fiap/project_bookstore_mvc/services/BookServiceImplTest.class
+com/fiap/project_bookstore_mvc/integration/BookIntegrationTest.class
+com/fiap/project_bookstore_mvc/controller/AuthorControllerTest.class
+com/fiap/project_bookstore_mvc/ProjectBookstoreMvcApplicationTests.class
+com/fiap/project_bookstore_mvc/services/AuthorServiceImplTest.class
+com/fiap/project_bookstore_mvc/repositories/BookRepositoryTest.class
+com/fiap/project_bookstore_mvc/controller/BookControllerTest.class

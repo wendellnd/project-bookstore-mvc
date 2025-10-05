@@ -1,1 +1,9 @@
 /Users/wendellnd/Documents/wendellnd/project-bookstore-mvc/src/test/java/com/fiap/project_bookstore_mvc/ProjectBookstoreMvcApplicationTests.java
+/Users/wendellnd/Documents/wendellnd/project-bookstore-mvc/src/test/java/com/fiap/project_bookstore_mvc/controller/AuthorControllerTest.java
+/Users/wendellnd/Documents/wendellnd/project-bookstore-mvc/src/test/java/com/fiap/project_bookstore_mvc/controller/BookControllerTest.java
+/Users/wendellnd/Documents/wendellnd/project-bookstore-mvc/src/test/java/com/fiap/project_bookstore_mvc/integration/AuthorIntegrationTest.java
+/Users/wendellnd/Documents/wendellnd/project-bookstore-mvc/src/test/java/com/fiap/project_bookstore_mvc/integration/BookIntegrationTest.java
+/Users/wendellnd/Documents/wendellnd/project-bookstore-mvc/src/test/java/com/fiap/project_bookstore_mvc/repositories/AuthorRepositoryTest.java
+/Users/wendellnd/Documents/wendellnd/project-bookstore-mvc/src/test/java/com/fiap/project_bookstore_mvc/repositories/BookRepositoryTest.java
+/Users/wendellnd/Documents/wendellnd/project-bookstore-mvc/src/test/java/com/fiap/project_bookstore_mvc/services/AuthorServiceImplTest.java
+/Users/wendellnd/Documents/wendellnd/project-bookstore-mvc/src/test/java/com/fiap/project_bookstore_mvc/services/BookServiceImplTest.java

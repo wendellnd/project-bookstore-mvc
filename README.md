@@ -44,3 +44,11 @@ Acessível em: http://localhost:8080/h2-console
 _JDBC URL:_ `jdbc:h2:mem:testdb`
 _USER:_ `sa`
 _PASSWORD:_ `(deixe em branco)`
+
+## Relatório de Cobertura
+O relatório de cobertura do Jacoco está disponível em: `target/site/jacoco/index.html`
+
+## Repositório no GitHub
+```
+https://github.com/wendellnd/project-bookstore-mvc
+```

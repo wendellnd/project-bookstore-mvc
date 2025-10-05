@@ -1,0 +1,16 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+project-bookstore-mvc,com.fiap.project_bookstore_mvc.dto.Out,AuthorOutDTO,0,12,0,0,0,1,0,1,0,1
+project-bookstore-mvc,com.fiap.project_bookstore_mvc.dto.Out,BookOutDTO,0,15,0,0,0,1,0,1,0,1
+project-bookstore-mvc,com.fiap.project_bookstore_mvc.services,AuthorServiceImpl,0,73,0,0,0,14,0,9,0,9
+project-bookstore-mvc,com.fiap.project_bookstore_mvc.services,BookServiceImpl,0,59,2,2,0,14,2,6,0,6
+project-bookstore-mvc,com.fiap.project_bookstore_mvc.exceptions,EntityNotFound,0,4,0,0,0,2,0,1,0,1
+project-bookstore-mvc,com.fiap.project_bookstore_mvc.controller,AuthorController,0,81,0,0,0,22,0,7,0,7
+project-bookstore-mvc,com.fiap.project_bookstore_mvc.controller,BookController,0,67,0,0,0,19,0,6,0,6
+project-bookstore-mvc,com.fiap.project_bookstore_mvc.mappers,BookMapper,3,32,0,0,1,10,1,2,1,2
+project-bookstore-mvc,com.fiap.project_bookstore_mvc.mappers,AuthorMapper,3,20,0,0,1,8,1,2,1,2
+project-bookstore-mvc,com.fiap.project_bookstore_mvc.dto.In,BookInDTO,0,15,0,0,0,1,0,1,0,1
+project-bookstore-mvc,com.fiap.project_bookstore_mvc.dto.In,AuthorInDTO,0,12,0,0,0,1,0,1,0,1
+project-bookstore-mvc,com.fiap.project_bookstore_mvc.configs,GlobalExceptionHandler,10,6,0,0,3,2,1,2,1,2
+project-bookstore-mvc,com.fiap.project_bookstore_mvc,ProjectBookstoreMvcApplication,5,3,0,0,2,1,1,1,1,1
+project-bookstore-mvc,com.fiap.project_bookstore_mvc.entities,Author,15,34,0,0,7,15,4,7,4,7
+project-bookstore-mvc,com.fiap.project_bookstore_mvc.entities,Book,12,34,0,0,6,14,3,7,3,7
