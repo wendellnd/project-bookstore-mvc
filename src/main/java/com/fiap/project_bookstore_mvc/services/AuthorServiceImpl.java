@@ -54,6 +54,6 @@ public class AuthorServiceImpl implements AuthorService {
     public List<Book> findBooksByAuthorId(Long authorId) {
         Author author = authorRepository.findById(authorId).orElseThrow(() -> new EntityNotFound("Author not found"));
 
-        return author.getBooks();
+        return bookRepository.findByAuthor(author);
     }
 }

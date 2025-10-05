@@ -1,6 +1,7 @@
 package com.fiap.project_bookstore_mvc.services;
 
 import com.fiap.project_bookstore_mvc.entities.Book;
+import com.fiap.project_bookstore_mvc.exceptions.EntityNotFound;
 import com.fiap.project_bookstore_mvc.repositories.BookRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -28,7 +29,8 @@ public class BookServiceImpl implements BookService {
     @Override
     @Transactional(readOnly = true)
     public Book findById(Long id) {
-        return bookRepository.findById(id).orElse(null);
+        return bookRepository.findById(id)
+                .orElseThrow(() -> new EntityNotFound("Book not found"));
     }
 
     @Override

@@ -25,17 +25,4 @@ public class GlobalExceptionHandler {
         Map<String, String> errorResult = Map.of("error", "ops... ocorreu um erro inesperado");
         return ResponseEntity.internalServerError().body(errorResult);
     }
-
-    @ExceptionHandler(MethodArgumentNotValidException.class)
-    @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public ResponseEntity<Map<String,String>> handleMethodArgumentNotValidException(MethodArgumentNotValidException e) {
-
-        final Map<String, String> errors = new HashMap<>();
-        e.getBindingResult()
-                .getFieldErrors()
-                .stream().parallel()
-                .forEach( error -> errors.put(error.getField(), error.getDefaultMessage()));
-
-        return ResponseEntity.badRequest().body(errors);
-    }
 }
