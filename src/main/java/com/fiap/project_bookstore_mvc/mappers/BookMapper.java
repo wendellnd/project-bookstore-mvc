@@ -6,7 +6,7 @@ import com.fiap.project_bookstore_mvc.dto.Out.BookOutDTO;
 import com.fiap.project_bookstore_mvc.entities.Author;
 import com.fiap.project_bookstore_mvc.entities.Book;
 
-public class BookMapper {
+public final class BookMapper {
 
     public static BookOutDTO toOutDTO(Book book) {
         AuthorOutDTO author = AuthorMapper.toOutDTO(book.getAuthor());
