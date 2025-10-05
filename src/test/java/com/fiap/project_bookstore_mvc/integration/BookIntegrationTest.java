@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
-import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.transaction.annotation.Transactional;
@@ -43,7 +42,6 @@ class BookIntegrationTest {
     }
 
     @Test
-    @WithMockUser
     void createBook_shouldPersistAndReturnBook() throws Exception {
         // Given - create an author first
         Author author = new Author(null, "Test Author", "test@example.com");
@@ -74,7 +72,6 @@ class BookIntegrationTest {
     }
 
     @Test
-    @WithMockUser
     void getBookById_shouldReturnPersistedBook() throws Exception {
         // Given - persist author and book directly to database
         Author author = new Author(null, "Book Author", "author@example.com");
@@ -94,7 +91,6 @@ class BookIntegrationTest {
     }
 
     @Test
-    @WithMockUser
     void updateBook_shouldModifyPersistedData() throws Exception {
         // Given - persist author and book
         Author author = new Author(null, "Original Author", "original@example.com");
@@ -125,7 +121,6 @@ class BookIntegrationTest {
     }
 
     @Test
-    @WithMockUser
     void deleteBook_shouldRemoveFromDatabase() throws Exception {
         // Given - persist author and book
         Author author = new Author(null, "Author", "author@example.com");
@@ -143,7 +138,6 @@ class BookIntegrationTest {
     }
 
     @Test
-    @WithMockUser
     void findAllBooks_shouldReturnPagedResults() throws Exception {
         // Given - persist author and multiple books
         Author author = new Author(null, "Prolific Author", "prolific@example.com");
@@ -168,7 +162,6 @@ class BookIntegrationTest {
     }
 
     @Test
-    @WithMockUser
     void getBookById_shouldReturn404WhenNotFound() throws Exception {
         this.mockMvc.perform(get("/books/999"))
                 .andExpect(status().isNotFound());

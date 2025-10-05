@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
-import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.transaction.annotation.Transactional;
@@ -43,7 +42,6 @@ class AuthorIntegrationTest {
     }
 
     @Test
-    @WithMockUser
     void createAuthor_shouldPersistAndReturnAuthor() throws Exception {
         this.mockMvc.perform(post("/authors")
                         .contentType(MediaType.APPLICATION_JSON)
@@ -65,7 +63,6 @@ class AuthorIntegrationTest {
     }
 
     @Test
-    @WithMockUser
     void getAuthorById_shouldReturnPersistedAuthor() throws Exception {
         // Given - persist an author directly to database
         Author author = new Author(null, "Persisted Author", "persisted@example.com");
@@ -80,7 +77,6 @@ class AuthorIntegrationTest {
     }
 
     @Test
-    @WithMockUser
     void updateAuthor_shouldModifyPersistedData() throws Exception {
         // Given - persist an author
         Author author = new Author(null, "Original Name", "original@example.com");
@@ -107,7 +103,6 @@ class AuthorIntegrationTest {
     }
 
     @Test
-    @WithMockUser
     void deleteAuthor_shouldRemoveFromDatabase() throws Exception {
         // Given - persist an author
         Author author = new Author(null, "To Be Deleted", "delete@example.com");
@@ -122,7 +117,6 @@ class AuthorIntegrationTest {
     }
 
     @Test
-    @WithMockUser
     void findAllAuthors_shouldReturnPagedResults() throws Exception {
         // Given - persist multiple authors
         Author author1 = new Author(null, "Author 1", "author1@example.com");
@@ -144,7 +138,6 @@ class AuthorIntegrationTest {
     }
 
     @Test
-    @WithMockUser
     void findBooksByAuthorId_shouldReturnAuthorBooks() throws Exception {
         // Given - persist author and books
         Author author = new Author(null, "Book Author", "bookauthor@example.com");
@@ -165,7 +158,6 @@ class AuthorIntegrationTest {
     }
 
     @Test
-    @WithMockUser
     void getAuthorById_shouldReturn404WhenNotFound() throws Exception {
         this.mockMvc.perform(get("/authors/999"))
                 .andExpect(status().isNotFound());

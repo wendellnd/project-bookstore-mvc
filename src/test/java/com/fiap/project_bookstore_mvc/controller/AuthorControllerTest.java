@@ -13,7 +13,6 @@ import org.springframework.context.annotation.Import;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.http.MediaType;
-import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.servlet.MockMvc;
 
@@ -38,7 +37,6 @@ class AuthorControllerTest {
     AuthorService authorService;
 
     @Test
-    @WithMockUser
     void getById_returnAuthorWhenFound() throws Exception {
         Author author = new Author(1L, "Test Author", "test@example.com");
 
@@ -52,7 +50,6 @@ class AuthorControllerTest {
     }
 
     @Test
-    @WithMockUser
     void findAll_returnPagedAuthors() throws Exception {
         Author author1 = new Author(1L, "Author 1", "author1@example.com");
         Author author2 = new Author(2L, "Author 2", "author2@example.com");
@@ -73,7 +70,6 @@ class AuthorControllerTest {
     }
 
     @Test
-    @WithMockUser
     void create_returnCreatedAuthor() throws Exception {
         Author savedAuthor = new Author(1L, "New Author", "new@example.com");
 
@@ -94,7 +90,6 @@ class AuthorControllerTest {
     }
 
     @Test
-    @WithMockUser
     void update_returnUpdatedAuthor() throws Exception {
         Author updatedAuthor = new Author(1L, "Updated Author", "updated@example.com");
 
@@ -116,14 +111,12 @@ class AuthorControllerTest {
     }
 
     @Test
-    @WithMockUser
     void delete_returnNoContent() throws Exception {
         this.mockMvc.perform(delete("/authors/1"))
                 .andExpect(status().isNoContent());
     }
 
     @Test
-    @WithMockUser
     void findBooksByAuthorId_returnBooksList() throws Exception {
         Author author = new Author(1L, "Test Author", "test@example.com");
         Book book1 = new Book(1L, "Book 1", "978-0123456789", author);
@@ -144,7 +137,6 @@ class AuthorControllerTest {
     }
 
     @Test
-    @WithMockUser
     void getById_returnNotFoundWhenAuthorNotExists() throws Exception {
         when(this.authorService.findById(999L)).thenThrow(new EntityNotFound("Author not found with id: 999"));
 
@@ -153,7 +145,6 @@ class AuthorControllerTest {
     }
 
     @Test
-    @WithMockUser
     void findBooksByAuthorId_returnNotFoundWhenAuthorNotExists() throws Exception {
         when(this.authorService.findBooksByAuthorId(999L)).thenThrow(new EntityNotFound("Author not found with id: 999"));
 
@@ -162,7 +153,6 @@ class AuthorControllerTest {
     }
 
     @Test
-    @WithMockUser
     void delete_returnNotFoundWhenAuthorNotExists() throws Exception {
         doThrow(new EntityNotFound("Author not found with id: 999")).when(this.authorService).delete(999L);
 

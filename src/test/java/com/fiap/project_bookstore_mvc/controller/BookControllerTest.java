@@ -13,7 +13,6 @@ import org.springframework.context.annotation.Import;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.http.MediaType;
-import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.servlet.MockMvc;
 
@@ -38,7 +37,6 @@ class BookControllerTest {
     BookService bookService;
 
     @Test
-    @WithMockUser
     void getById_returnBookWhenFound() throws Exception {
         Author author = new Author(1L, "Test Author", "test@example.com");
         Book book = new Book(1L, "Test Book", "978-0123456789", author);
@@ -56,7 +54,6 @@ class BookControllerTest {
     }
 
     @Test
-    @WithMockUser
     void findAll_returnPagedBooks() throws Exception {
         Author author = new Author(1L, "Test Author", "test@example.com");
         Book book1 = new Book(1L, "Book 1", "978-0123456789", author);
@@ -80,7 +77,6 @@ class BookControllerTest {
     }
 
     @Test
-    @WithMockUser
     void create_returnCreatedBook() throws Exception {
         Author author = new Author(1L, "Test Author", "test@example.com");
         Book savedBook = new Book(1L, "New Book", "978-0111111111", author);
@@ -105,7 +101,6 @@ class BookControllerTest {
     }
 
     @Test
-    @WithMockUser
     void update_returnUpdatedBook() throws Exception {
         Author author = new Author(1L, "Test Author", "test@example.com");
         Book updatedBook = new Book(1L, "Updated Book", "978-0222222222", author);
@@ -131,14 +126,12 @@ class BookControllerTest {
     }
 
     @Test
-    @WithMockUser
     void delete_returnNoContent() throws Exception {
         this.mockMvc.perform(delete("/books/1"))
                 .andExpect(status().isNoContent());
     }
 
     @Test
-    @WithMockUser
     void getById_returnNotFoundWhenBookNotExists() throws Exception {
         when(this.bookService.findById(999L)).thenThrow(new EntityNotFound("Book not found with id: 999"));
 
@@ -147,7 +140,6 @@ class BookControllerTest {
     }
 
     @Test
-    @WithMockUser
     void delete_returnNotFoundWhenBookNotExists() throws Exception {
         doThrow(new EntityNotFound("Book not found with id: 999")).when(this.bookService).delete(999L);
 
